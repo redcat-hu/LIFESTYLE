@@ -1,0 +1,19 @@
+{
+    "logo": "teszt",
+    "nev": "Varnai",
+    "leiras": "Ez egy leiras",
+    "csomagok": [
+        {
+            "csomag_nev": "Első csomag",
+            "csomag_leiras": "teszt"
+        },
+        {
+            "csomag_nev": "Második csomag",
+            "csomag_leiras": "teszt"
+        },
+        {
+            "csomag_nev": "Harmadik csomag",
+            "csomag_leiras": "teszt"
+        }
+    ]
+}
