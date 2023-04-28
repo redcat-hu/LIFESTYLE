@@ -1,6 +1,6 @@
 <?php
-if (isset($_COOKIE["cookie_consent_level"]) and isset($_COOKIE["cookie_consent_user_accepted"])) {
-        $cookie_1 = $_COOKIE["cookie_consent_user_accepted"];
+if (isset($_COOKIE["cookie_consent_level"]) and isset($_COOKIE["cookie_consent_accepted"])) {
+        $cookie_1 = $_COOKIE["cookie_consent_accepted"];
         $cookie_2 = $_COOKIE["cookie_consent_level"];
 } else {
         $cookie_1 = false;

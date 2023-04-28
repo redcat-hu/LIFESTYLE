@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<?= $language[0] ?>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamarosan</title>
+    <title><?= $json["name"][0].$json["name"][1] ?> - <?= $page ?></title>
     <link rel="stylesheet" href="css/style.css">
     <?php
       if (!empty($cookie_2["tracking"])) {
@@ -18,6 +18,7 @@
       <!-- End Google Tag Manager -->";
     } ?>
 </head>
+
 <body>
 <?php
   if (!empty($cookie_2["tracking"])) {
@@ -26,21 +27,13 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W7J5FM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->';} ?>
+<div id="pre_loader" class="f0">
+  <b><?= writeLogo($json); ?></b>
+  <div>Betöltés folyamatban</div>
+</div>
 
 <header>
-<h1>VARNAI</h1>
+  <?= writeLogo($json); ?>
+  <nav><?= writeNAV ($json, $ishome); ?></nav>
+  <a class="btn_js btn_xtra" href="start"><?= $json["nav_btn"] ?></a>
 </header>
-    
-<footer>
-
-</footer>
-
-<div id="cookie"></div>
-<script>
-    var language = "<?= $language[0] ?>";
-    var php = ["<?= $local[0] ?>", "<?= $local[1] ?>", "<?= $local[2] ?>"];
-</script>
-<script src="<?= $local[2] ?>js/cookie.js?v=<?= time() ?>"></script>
-<script src="<?= $local[0] ?>js/main.js?v=<?= time() ?>"></script>
-</body>
-</html>
