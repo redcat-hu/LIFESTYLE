@@ -67,4 +67,19 @@ feledd, szolgáltatásunk valódi értéke, te magad vagy, az elkötelezettsége
     <a href="tel:+36304833004" class="btn phone">+36304833004</a>
     <a href="mailto:info@reshape.hu" class="btn mail">info@reshape.hu</a>
   </div>
+  <div class="b0">
+    <h3>Email küldése <br>közvetlen az oldalról:</h3>
+    <form method="post" action="webmail.php">
+      <label for="m_name">Név:</label>
+      <input type="text" id="m_name" name="m_name"><br>
+      
+      <label for="m_email">E-mail cím:</label>
+      <input type="email" id="m_email" name="m_email"><br>
+
+      <label for="m_message">Üzenet:</label>
+      <textarea id="m_message" name="m_message"></textarea><br>
+
+      <input type="submit" value="Küldés">
+    </form>
+  </div>
 </div>

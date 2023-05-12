@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $max-w: 2000px;
+$max-w2: 1000px;
+
 $shad_1: 0 0 1rem rgba(19,19,19,.301);
 
 * {
@@ -9,18 +11,26 @@ $shad_1: 0 0 1rem rgba(19,19,19,.301);
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(32, 32, 32);
-    width: clamp(250px, 100%, $max-w);
-    margin: 0 auto;
+:root {
     --color_main_1: rgb(60, 192, 179);
     --color_main_1_alpha: rgba(64, 224, 208, 0.45);
     --color_main_2: darkcyan;
     --color_text_1: rgb(8, 8, 8);
     --colog_bg_1: white;
     --colog_bg_1_alpha: rgba(255, 255, 255, 0.6);
+
+    --primary-color: rgb(60, 192, 179);
+    --secondary-color: darkcyan;
+    --background-color: white;
+    --text-color: black;
+    --font-family: 'Montserrat', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
+    background-color: rgb(32, 32, 32);
+    width: clamp(250px, 100%, $max-w);
+    margin: 0 auto;
     box-shadow: 0 0 5rem rgba(14, 14, 14, 0.521);
 }
 li {
@@ -63,6 +73,13 @@ a:hover {
     background-color: var(--color_main_1);
     color: var(--colog_bg_1);
 }
+.b0 {
+    background-color: var(--colog_bg_1_alpha);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    line-height: 2rem;
+    backdrop-filter: blur(8px);
+}
 .b1 {
     min-height: 700px;
     background-color: var(--color_main_2);
@@ -76,9 +93,19 @@ a:hover {
     gap: 2rem;
     padding: 5rem 20px;
 }
-h1,h2,h3 {
+h1,h2 {
     text-transform: uppercase;
     font-size: 27px;
+}
+
+input, textarea {
+    border-radius: .5rem;
+    border: 0;
+    padding: 5px;
+    width: 100%;
+}
+label {
+    font-weight: bold;
 }
 
 // PRELOADER
@@ -169,15 +196,22 @@ header {
         border-radius: 1rem;
     }
 }
-.brand {
+.questionnaire {
     color: var(--color_text_1);
     background-color: var(--colog_bg_1);
     min-height: auto;
-    gap: .5rem;
-    padding: 35px;
+    gap: 1rem;
+    padding: 3rem 35px;
+    max-width: $max-w2;
+    margin: 0 auto;
 
     h1 {
         font-size: 30px;
+    }
+    h3 {
+        font-size: 22px;
+        text-transform: uppercase;
+        padding: 1rem 0;
     }
     .break {
         background-color: var(--color_main_1);
@@ -186,6 +220,17 @@ header {
     }
     p {
         font-size: 20px;
+    }
+    .box {
+        grid-column: span 12;
+        background-color: var(--color_main_1);
+        padding: 1rem;
+        border-radius: 1rem;
+        line-height: 1.5rem;
+        box-shadow: 3px 3px 5px #1e1e1e40;
+    }
+    .qtop {
+        grid-column: span 12;
     }
 }
 #package{
@@ -343,6 +388,11 @@ display: none;
     }
   }
 @media screen and (min-width: 900px) {
+    .questionnaire {
+        .qtop {
+            grid-column: span 6;
+        }
+    }
     header {
         .logo {
         font-size: 30px;
