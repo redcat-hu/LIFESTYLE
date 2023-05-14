@@ -5,7 +5,7 @@ function writePackage ($json, $local) {
         for ($i=0; $i < count($json["package"]); $i++) {
             $package .= '<div id="pack_'. $i .'" class="categ">';
             $package .= '<div class="cover">
-                <div class="btn_js btn_xtra">Kezdjük</div>
+                <a class="btn_js btn_xtra" href="start">Kezdjük</a>
                 <img src="'. $local[1] .'img/pack_'.$i.'.webp" alt="">
                 <h3>'.$json["package"][$i]["title"].'</h3></div>
                 <p>'. $json["package"][$i]["mdesc"] .'</p>';
@@ -30,6 +30,20 @@ function writeNAV ($json, $ishome) {
         for ($i=0; $i < count($json["menu"]); $i++) {
             if ($json["menu"][$i][1] != "") {
                 $nav1 .= '<li><a class="btn" href="'.$ishome.'#'.$json["menu"][$i][1].'">'.$json["menu"][$i][0].'</a></li>';
+            }
+        }
+    $nav1 .= "</nav>";
+    return $nav1;
+}
+
+// MOBILE NAVIGATION BAR
+function writeMobileNAV ($json, $ishome) {
+    $nav1 = "<ul class='f0'>";
+        for ($i=0; $i < count($json["mobile_menu"]); $i++) {
+            if ($json["mobile_menu"][$i][1] != "") {
+                $nav1 .= '<li><a class="f0" href="'.$ishome.'#'.$json["mobile_menu"][$i][1].'">
+                <div><i class="'.$json["mobile_menu"][$i][2].'"></i></div><div>'.$json["mobile_menu"][$i][0].'</div>
+                </a></li>';
             }
         }
     $nav1 .= "</nav>";

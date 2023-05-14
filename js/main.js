@@ -17,7 +17,13 @@ function WriteMenu() {
   console.log("teszt");
 }
 
+if(document.getElementById("home")) {
 document.getElementById("home").style.backgroundImage = `url('${php[1]}img/main1.webp')`;
+}
+
+if(document.getElementById("questionnaire")) {
+  document.getElementById("questionnaire").style.backgroundImage = `linear-gradient(45deg, var(--colog_bg_1), var(--colog_bg_1_alpha)), url('${php[1]}img/main1.webp')`;
+}
 
 const el_contact = document.getElementById("contact");
 if (el_contact) {

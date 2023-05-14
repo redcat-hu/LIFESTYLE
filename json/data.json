@@ -12,6 +12,12 @@
         ["Rólunk", "about"],
         ["Kapcsolat", "contact"]
     ],
+    "mobile_menu": [
+        ["Főoldal", "home", "bi bi-house-fill"],
+        ["Csomagok", "package", "bi bi-box-seam-fill"],
+        ["Rólunk", "about", "bi bi-person-circle"],
+        ["Kapcsolat", "contact", "bi bi-chat-dots-fill"]
+    ],
     "package": [
         {
             "title": "Start",

@@ -17,7 +17,7 @@ $shad_1: 0 0 1rem rgba(19,19,19,.301);
     --color_main_2: darkcyan;
     --color_text_1: rgb(8, 8, 8);
     --colog_bg_1: white;
-    --colog_bg_1_alpha: rgba(255, 255, 255, 0.6);
+    --colog_bg_1_alpha: rgba(255, 255, 255, 0.4);
 
     --primary-color: rgb(60, 192, 179);
     --secondary-color: darkcyan;
@@ -28,7 +28,7 @@ $shad_1: 0 0 1rem rgba(19,19,19,.301);
 html {
     scroll-behavior: smooth;
     font-family: var(--font-family);
-    background-color: rgb(32, 32, 32);
+    background-color: var(--background-color);
     width: clamp(250px, 100%, $max-w);
     margin: 0 auto;
     box-shadow: 0 0 5rem rgba(14, 14, 14, 0.521);
@@ -93,16 +93,12 @@ a:hover {
     gap: 2rem;
     padding: 5rem 20px;
 }
+.box1 {
+    min-height: 700px;
+}
 h1,h2 {
     text-transform: uppercase;
     font-size: 27px;
-}
-
-input, textarea {
-    border-radius: .5rem;
-    border: 0;
-    padding: 5px;
-    width: 100%;
 }
 label {
     font-weight: bold;
@@ -188,23 +184,29 @@ header {
         }
     }
 }
-.start {
-    h1 {
-        background-color: var(--colog_bg_1_alpha);
-        padding: 2rem;
-        backdrop-filter: blur(8px);
-        border-radius: 1rem;
-    }
+.brand {
+    background-color: var(--background-color);
+    padding: 1rem;
 }
-.questionnaire {
-    color: var(--color_text_1);
-    background-color: var(--colog_bg_1);
-    min-height: auto;
-    gap: 1rem;
-    padding: 3rem 35px;
-    max-width: $max-w2;
+#questionnaire {
+    padding: 50vh 1rem 5rem 1rem;
+    max-width: $max-w;
     margin: 0 auto;
+    color: var(--colog_bg_1);
+    background-attachment: fixed;
+    background-size: cover;
 
+    form {
+        max-width: 1000px;
+        display: grid;
+        grid-column: repeat(1fr, 12);
+        grid-row: auto;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+    .box1 {
+        color: white;
+    }
     h1 {
         font-size: 30px;
     }
@@ -223,16 +225,61 @@ header {
     }
     .box {
         grid-column: span 12;
-        background-color: var(--color_main_1);
+        background-image: linear-gradient(40deg, var(--secondary-color), var(--primary-color));
         padding: 1rem;
         border-radius: 1rem;
-        line-height: 1.5rem;
+        line-height: 2rem;
         box-shadow: 3px 3px 5px #1e1e1e40;
+    }
+    .box:first-child {
+        padding: 2rem;
+        text-align: justify;
     }
     .qtop {
         grid-column: span 12;
     }
 }
+
+.siteform {
+    input, textarea {
+        width: 100%;
+    }
+    input, textarea, select {
+        border-radius: 16px;
+        padding: 8px 10px;
+        border: 0;
+        margin: 5px 0;
+        box-shadow: inset 0px 0px 2px #242424;
+        background-color: var(--colog_bg_1_alpha);
+        transition: background-color .5s;
+        font-weight: bold;
+    }
+    select, input[type=checkbox] {
+        width: auto;
+    }
+    input[type=number] {
+        width: 80px;
+    }
+    input[type=submit] {
+        background-color: var(--background-color);
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        cursor: pointer;
+        padding: .5rem;
+        transition: opacity .2s;
+    }
+    :focus {
+        outline: none;
+        box-shadow: none;
+        background-color: var(--background-color);
+    }
+    input[type=submit]:hover {
+        opacity: .7;
+    }
+}
+
 #package{
     .packbox{
         gap: 3rem;
@@ -388,7 +435,7 @@ display: none;
     }
   }
 @media screen and (min-width: 900px) {
-    .questionnaire {
+    #questionnaire {
         .qtop {
             grid-column: span 6;
         }
