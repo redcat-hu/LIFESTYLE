@@ -47,10 +47,10 @@ if (mail($to, $subject, $message, $headers)) {
 
 <div id="cookie"></div>
 <script>
-    var language = "<?= $language[0] ?>";
-    var php = ["<?= $local[0] ?>", "<?= $local[1] ?>", "<?= $local[2] ?>"];
+    let language = "<?= $language[0] ?>";
+    let php = ["<?= $local[0] ?>", "<?= $local[1] ?>", "<?= $local[2] ?>"];
 </script>
-<script src="<?= $local[0] ?>js/main.js?v=<?= time() ?>"></script>
+<script src="<?= $local[0] ?>ts/public/main.js?v=<?= time() ?>"></script>
 <script src="<?= $local[2] ?>js/cookie_2.js?v=<?= time() ?>"></script>
 
 </body>

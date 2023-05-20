@@ -6,7 +6,7 @@ function writePackage ($json, $local) {
             $package .= '<div id="pack_'. $i .'" class="categ">';
             $package .= '<div class="cover">
                 <a class="btn_js btn_xtra" href="start">Kezdjük</a>
-                <img src="'. $local[1] .'img/pack_'.$i.'.webp" alt="">
+                <img src="'. $local[0] .'img/pack_'.$i.'.webp" alt="">
                 <h3>'.$json["package"][$i]["title"].'</h3></div>
                 <p>'. $json["package"][$i]["mdesc"] .'</p>';
             $package .= '<ul>'; // Package List
