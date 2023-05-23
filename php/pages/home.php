@@ -1,21 +1,15 @@
 <div id="home" class="f0">
-  <div class="f0 pack">
-    <div class="f0 box">
-      <h2><?= $json["package"][0]["title"] ?></h2>
-      <p><?= $json["package"][0]["mdesc"] ?></p>
-      <div class="btn more"><a href="#pack_0">Részletek</a></div>
-    </div>
-    <div class="f0 box">
-      <h2><?= $json["package"][1]["title"] ?></h2>
-      <p><?= $json["package"][1]["mdesc"] ?></p>
-      <div class="btn more"><a href="#pack_1">Részletek</a></div>
-    </div>
-    <div class="f0 box">
-      <h2><?= $json["package"][2]["title"] ?></h2>
-      <p><?= $json["package"][2]["mdesc"] ?></p>
-      <div class="btn more"><a href="#pack_2">Részletek</a></div>
-    </div>
+
+  <video autoplay muted loop id="homeVideo">
+    <source src="<?= $siteInfo->mainPath; ?>img/video1.mp4" type="video/mp4">
+  </video>
+
+  <div class="content f0">
+    <img src="<?= $siteInfo->mainPath; ?>img/logo.webp" alt="teszt">
+    <p>A Reshape a legpraktikusabb ahhoz, hogy jobb formába kerülj. Mi segítünk elérni  céljaidat a saját testeddel, egészséges étrend, céloptimalizált edzésterv, a te életviteledhez igazodva. Profizmus praktikusan az egészséges, sportos testért.</p>
+    <a class="btn_js btn_xtra" href="#about">Ismerj meg minket jobban!</a>
   </div>
+
 </div>
 
 <div class="brand f0">
@@ -25,40 +19,25 @@
 
 <div id="package" class="b1">
   <h2>Csomagok</h2>
-  <?= writePackage ($json, $local); ?>
+  <?= writePackage ($json, $siteInfo); ?>
 </div>
 
 <div id="about" class="b1">
-<h2>Rólunk</h2>
-<p>
-A <?= writeLogo($json); ?> egy olyan startup, ahol rendhagyó stratégiával és metodikával optimalizáljuk a 21. századi élethez az egészséges
-életmódot, a testmozgást, táplálkozást és ennek minden egyéb elképzelhető aspektusát. Mindezt maximálisan személyre
-szabottan a fiataltól az idős korosztályig, az amatőröktől a sportolókig, az egészségesektől a valamilyen betegségekkel küzdőkig, a
-speciális táplálkozási igényűekig bezárólag, pótlólagos és preventív jelleggel egyaránt.
-</p>
-<p>
-A <?= writeLogo($json); ?> tevékenységét alapjaiban határozta meg a tanulmányok által megszerzett szaktudás, illetve a közel 20 évre
-visszatekintő élsportban megszerzett tapasztalat és impresszió.
-</p>
-<p>
-A <?= writeLogo($json); ?>-nál tisztában vagyunk társadalmunk alapvető problémáival, a rohanó világ okozta kellemetlenségekkel, az élet
-túlzsúfoltságával, azzal, hogy az embereknek nincs annyi és olyan minőségű idejük önmaguk gondozására, mint amennyire
-valójában szükségük volna. Ennek fényében sosem volt még akkora létjogosultsága egy ilyen kezdeményezésnek, mint
-napjainkban.
-</p>
-<p> A <?= writeLogo($json); ?> erre kínál korszerű megoldást. Küldetésünknek tekintjük, hogy az egészséges életmód globális viszonylatban
-szokássá váljon. Célunk a mára világszintű népbetegséggé vált elhízás és elhízás okozta megbetegedések visszaszorítása és
-megelőzése, az emberek életminőségének javítása, és a teljesítménymaximalizáláshoz való hozzájárulás minden hozzánk
-bizalommal forduló ember életében. </p>
-<p>
-Filozófiánk értelmében szolgáltatáscsomagjaink árait is úgy szabjuk meg, hogy minél szélesebb körben elérhetővé tegyük őket
-valamennyi ember számára.
-</p>
-<p>
-Nem kínálunk varázseljárásokat, módszerink által pusztán hozzáférhetővé tesszük a változtatáshoz szükséges eszköztárat, de ne
-feledd, szolgáltatásunk valódi értéke, te magad vagy, az elkötelezettséged, a szívós kitartásod, az akaraterőd és szenvedélyed
-ötvözete a legnagyobb közös értékünk! <b>LÉGY A LEGJOBB ÖNMAGAD!!!</b>
-</p>
+  <h2>Rólunk</h2>
+  <p> A <?= writeLogo($json); ?> két barát, és egyben két élsportoló által létrejött projekt, akik amellett, hogy minden nap ebben élnek, ezt is tanulták. Segítünk meghatározni a célodat, majd végig kísérve téged elérni azt. A változás és az egészségesebb forma sikere két dologtól függ:</p>
+  <p>A siker első része a megfelelő tudás. Megbeszéljük milyen változásra számíthatsz, ez az edzéstervektől kezdve, az étkezési naplóidon keresztül, az emésztőrendszer rehabilitációján át mindenről szól, ami a tested. </p>
+  <p>A siker másik összetevője a megfelelő módszertan. Mi a <?= writeLogo($json); ?> csapatánál egy teljesen új szemlélettel dolgozunk, a módszertant illetően. Ez az a tudás, ami segít neked a legkényelmesebben beleilleszteni a napjaidba azt a plusz mozgást és egészséges étrendet, amivel könnyedén és gyorsan változhatsz. Miattunk nem kell előbb kelned, gyalog járnod a munkahelyedre, vagy lemondanod a nassolásról. Csak töltsd ki a kérdőívünket, hogy megfelelően feltérképezhessünk, és mi a céljaidnak megfelelően megadjuk neked a legprofibb iránymutatást.</p>
+  <p> Közös konzultációnk alkalmával meghatározzuk az elérni kívánt céljaidat, hogy milyen változást szeretnél látni magadon, a többit pedig bízd ránk. Csomagjaink teljesen személyre szabott étrendeket, edzésterveket és ami a legfontosabb, egy mentort adnak neked. Mi végig támogatni fogunk az utadon, mivel nem időszakos eredményeket, hanem az alap életfelfogásod egészségesebbé tételét szeretnénk elérni veled együtt.</p>
+  <p>A mi projektünknek a valódi értéke, te magad vagy. Az elkötelezettséged, a kitartásod, az akaraterőd és szenvedélyed ötvözete, amelyek együtt lesznek a legnagyobb közös értékünk!</p>
+  <p>LÉGY A LEGJOBB ÖNMAGAD!</p>
+
+  <details>
+    <summary>További információk</summary><br>
+    <p>A <?= writeLogo($json); ?> egy olyan startup, ahol rendhagyó stratégiával és metodikával optimalizáljuk a 21. századi élethez az egészséges életmódot, a testmozgást, táplálkozást és ennek minden egyéb elképzelhető aspektusát. Mindezt maximálisan személyre szabottan a fiataltól az idős korosztályig, az amatőröktől a sportolókig, az egészségesektől a valamilyen betegségekkel küzdőkig, a speciális táplálkozási igényűekig bezárólag, pótlólagos és preventív jelleggel egyaránt.</p><br>
+    <p>A <?= writeLogo($json); ?>-nál tisztában vagyunk az élet túlzsúfoltságával, és azzal, hogy az embereknek nincs annyi és olyan minőségű idejük önmaguk gondozására, mint amennyire valójában szükségük volna. Ennek fényében sosem volt még akkora létjogosultsága egy ilyen kezdeményezésnek, mint napjainkban.</p><br>
+    <p>A <?= writeLogo($json); ?> erre kínál korszerű megoldást. Küldetésünknek tekintjük, hogy az egészséges életmód globális viszonylatban szokássá váljon. Célunk a mára világszintű népbetegséggé vált elhízás és elhízás okozta megbetegedések visszaszorítása és megelőzése, az emberek életminőségének javítása, és a teljesítménymaximalizáláshoz való hozzájárulás minden hozzánk bizalommal forduló ember életében. Légy teljesen kezdő, vagy már profi sportoló, mi mindenkinek a saját szintjéhez adaptálva mutatunk irányt</p>
+  </details>
+
 </div>
 
 <div id="contact" class="b1">

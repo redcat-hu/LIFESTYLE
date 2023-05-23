@@ -1,41 +1,51 @@
-const loadtime_before = new Date().getTime();
+const startTime = window.performance.now(); //benchmark start
 const preLoader = document.getElementById('pre_loader');
 
-function PreLoader() {
-    let loadtime = (loadtime_after - loadtime_before) / 1000;
-    let bonusLoad: number;
+// PreLoader
+async function PreLoader(): Promise<void> {
+  const loadTime: number = (endTime - startTime) / 1000;
+  const idealLoad: number = 1;
+  const delayTime: number = (loadTime <= idealLoad) ? (idealLoad - loadTime) * 1000 : 0;
 
-      let idealLoad = 1;
-      if (loadtime <= idealLoad) {
-        bonusLoad = (idealLoad - loadtime)*1000;
-      } else {
-        bonusLoad = 0;
+  function delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function waitPreloader(): Promise<void> {
+    try {
+      await delay(delayTime);
+      if (preLoader) {
+        preLoader.remove();
       }
-      setTimeout(function(){
-        if (preLoader) {
-          preLoader.remove();
-        }
-      }, bonusLoad);
-};
+    } catch (error) {
+      console.error("Hiba történt:", error);
+    }
+  }
 
-function WriteMenu() {
-  console.log("teszt");
+  await waitPreloader();
 }
 
-const home_id = document.getElementById("home");
-if(home_id) {
-  home_id.style.backgroundImage = `url('${php[0]}img/main1.webp')`;
-}
-
+// Elements
 const questionnaire_id = document.getElementById("questionnaire");
-if(questionnaire_id) {
-  questionnaire_id.style.backgroundImage = `linear-gradient(45deg, var(--colog_bg_1), var(--colog_bg_1_alpha)), url('${php[0]}img/main1.webp')`;
-}
-
 const el_contact = document.getElementById("contact");
-if (el_contact) {
-  el_contact.style.backgroundImage = `url('${php[0]}img/contact1.webp')`;
+const homeDiv = document.getElementById("home");
+
+// Form cover
+if(questionnaire_id) {
+  questionnaire_id.style.backgroundImage = `linear-gradient(45deg, var(--colog_bg_1), var(--colog_bg_1_alpha)), url('${mainPath}img/main1.webp')`;
 }
 
-let loadtime_after = new Date().getTime(); 
+// Contact cover
+if (el_contact) {
+  el_contact.style.backgroundImage = `url('${mainPath}img/contact1.webp')`;
+}
+
+// Home cover
+/*
+if (homeDiv) {
+  homeDiv.style.backgroundImage = `url('${mainPath}img/pack_1.webp')`;
+}
+*/
+
+const endTime = window.performance.now(); //benchmark stop
 window.addEventListener("load", PreLoader);

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="<?= $language[0] ?>">
+<html lang="<?= $siteLanguage ?>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $json["name"][0].$json["name"][1] ?> - <?= $page ?></title>
+    <title><?= $json["name"][0].$json["name"][1] ?> - <?= $pageName ?></title>
     <link rel="stylesheet" href="css/style.css">
     <?php
-      if (!empty($cookie_2["tracking"])) {
+      if (!empty($cookie2["tracking"]) && !$localServer) {
       echo
       "<!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -21,7 +21,7 @@
 
 <body>
 <?php
-  if (!empty($cookie_2["tracking"])) {
+  if (!empty($cookie2["tracking"]) && !$localServer) {
   echo
   '<!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W7J5FM"

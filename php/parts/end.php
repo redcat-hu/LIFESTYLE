@@ -1,20 +1,3 @@
-<?php 
-/*
-$to = "info@red-cat.hu";
-$subject = "Teszt e-mail";
-$message = "Ez egy teszt üzenet.";
-$headers = "From: RESHAPE Kérdőív <kerdoiv@reshape.hu>\r\n";
-$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-// E-mail küldése
-if (mail($to, $subject, $message, $headers)) {
-  echo "Az e-mail sikeresen elküldve!";
-} else {
-  echo "Az e-mail küldése sikertelen.";
-}
-*/
-?>
-
 <footer class="g0">
   <div>
     <?= writeLogo($json); ?>
@@ -47,11 +30,11 @@ if (mail($to, $subject, $message, $headers)) {
 
 <div id="cookie"></div>
 <script>
-    let language = "<?= $language[0] ?>";
-    let php = ["<?= $local[0] ?>", "<?= $local[1] ?>", "<?= $local[2] ?>"];
+    let siteLanguage = "<?= $siteLanguage ?>";
+    let mainPath = "<?= $siteInfo->mainPath ?>";
 </script>
-<script src="<?= $local[0] ?>ts/public/main.js?v=<?= time() ?>"></script>
-<script src="<?= $local[2] ?>js/cookie_2.js?v=<?= time() ?>"></script>
+<script src="<?= $siteInfo->mainPath ?>ts/public/main.js?v=<?= time() ?>"></script>
+<script src="<?= $siteInfo->redcatPath ?>js/cookie_2.js?v=<?= time() ?>"></script>
 
 </body>
 </html>

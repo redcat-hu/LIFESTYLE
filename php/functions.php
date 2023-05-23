@@ -1,21 +1,24 @@
 <?php
 // PACKAGE CREATOR
-function writePackage ($json, $local) {
-    $package = "<div class='f0 packbox'>";
+function writePackage ($json, $siteInfo) {
+    $package = "<div class='packbox'>";
+
         for ($i=0; $i < count($json["package"]); $i++) {
             $package .= '<div id="pack_'. $i .'" class="categ">';
             $package .= '<div class="cover">
                 <a class="btn_js btn_xtra" href="start">Kezdjük</a>
-                <img src="'. $local[0] .'img/pack_'.$i.'.webp" alt="">
+                <img src="'. $siteInfo->mainPath .'img/pack_'.$i.'.webp" alt="">
                 <h3>'.$json["package"][$i]["title"].'</h3></div>
                 <p>'. $json["package"][$i]["mdesc"] .'</p>';
             $package .= '<ul>'; // Package List
+
             for ($ii=0; $ii < count($json["package"][$i]["desc"]); $ii++) {
                 $package .= '<li>'.$json["package"][$i]["desc"][$ii].'</li>';
             }
             $package .= '</ul>';
             $package .= '</div>';
         }
+
     $package .= "</div>";
     return $package;
 }
